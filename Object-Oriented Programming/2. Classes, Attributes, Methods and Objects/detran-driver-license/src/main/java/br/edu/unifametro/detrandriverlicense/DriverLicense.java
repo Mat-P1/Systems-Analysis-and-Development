@@ -4,7 +4,6 @@ import br.edu.unifametro.detrandriverlicense.enumerations.Status;
 import br.edu.unifametro.detrandriverlicense.enumerations.Type;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class DriverLicense {
 
@@ -15,8 +14,6 @@ public class DriverLicense {
     public LocalDate expeditionDate;
     public int infractions;
     public Status status;
-
-    public DriverLicense() {}
 
     public DriverLicense(long licenseNumber, long ownerIdentification, Type type, LocalDate expirationDate,
                          LocalDate expeditionDate) {
@@ -29,20 +26,20 @@ public class DriverLicense {
         this.status = Status.Valid;
     }
 
-    public int addInfractionPoints(int points) {
-        return this.infractions += points;
+    public void addInfractionPoints(int points) {
+        this.infractions += points;
     }
 
-    public int removeInfractionPoints (int points) {
-        return this.infractions -= points;
+    public void removeInfractionPoints (int points) {
+        this.infractions -= points;
     }
 
-    public int resetInfractionPoints (int points) {
-        return this.infractions = 0;
+    public void resetInfractionPoints () {
+        this.infractions = 0;
     }
 
-    public String verifyInfractionPoints() {
-        return "Infraction Points" + this.infractions;
+    public void verifyInfractionPoints() {
+        System.out.println("Infraction Points: " + this.infractions);
     }
 
     public boolean isConfiscable() {
@@ -55,8 +52,8 @@ public class DriverLicense {
         } else if (isConfiscable()) {
             this.status = Status.Confiscated;
         }
-        System.out.println("Number: " + licenseNumber + " Owner: " + ownerIdentification + " Type: " + type +
-                "\nExpedition Date: " + expeditionDate + " Expiration Date: " + expirationDate +
-                "\nStatus: " + status + " Infraction Points: " + infractions);
+        System.out.println("Number: " + licenseNumber + " | Owner: " + ownerIdentification + " | Type: " + type +
+                "\nExpedition Date: " + expeditionDate + " | Expiration Date: " + expirationDate +
+                "\nStatus: " + status + " | Infraction Points: " + infractions);
     }
 }

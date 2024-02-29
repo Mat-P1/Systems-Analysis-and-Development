@@ -10,8 +10,6 @@ public class Lightbulb {
     public double price;
     public String warranty;
 
-    public Lightbulb() {}
-
     public Lightbulb(String brand, int voltage, String type, String model, String color, double price, String warranty) {
         this.brand = brand;
         this.voltage = voltage;

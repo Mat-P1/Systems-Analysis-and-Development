@@ -6,8 +6,6 @@ public class BankAccount {
     public long cpf;
     public double balance;
 
-    public BankAccount() {}
-
     public BankAccount(String clientName, long cpf, double balance) {
         this.clientName = clientName;
         this.cpf = cpf;
